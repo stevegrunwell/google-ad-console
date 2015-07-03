@@ -1,6 +1,6 @@
 {
 	"name"             : "stevegrunwell/google-ad-console",
-	"description"      : "Toggle the Google Ad Console widget within the WordPress admin bar.",
+	"description"      : "Toggle the Google Publisher Console within the WordPress admin bar.",
 	"version"          : "0.1",
 	"type"             : "wordpress-plugin",
 	"minimum-stability": "stable",
