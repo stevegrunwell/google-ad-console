@@ -1,5 +1,7 @@
 # Google Ad Console
 
+[![Build Status](https://travis-ci.org/stevegrunwell/google-ad-console.png)](https://travis-ci.org/stevegrunwell/google-ad-console)
+
 This plugin adds a simple "Google Ads Console" link to the WordPress admin bar, enabling logged-in users to easily toggle the [Google Publisher Console](https://support.google.com/dfp_sb/answer/181070?hl=en) when troubleshooting ad placements using Google Publisher Tags on your site.
 
 ## Filters
