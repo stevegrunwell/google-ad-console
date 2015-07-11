@@ -37,6 +37,11 @@ class AdConsoleTest extends TestCase {
 			'return' => 'http://example.com?console',
 		) );
 
+		M::wpFunction( 'get_query_var', array(
+			'times'  => 1,
+			'return' => false,
+		) );
+
 		M::wpPassthruFunction( 'esc_html__' );
 		M::wpPassthruFunction( 'esc_url' );
 
@@ -58,6 +63,41 @@ class AdConsoleTest extends TestCase {
 		) );
 
 		googleadconsole_add_node( new stdClass );
+	}
+
+	public function test_googleadconsole_add_node_current_state() {
+		$expected = array(
+			'id'    => 'google-ad-console-toggle',
+			'title' => 'Google Ad Console',
+			'href'  => 'URL',
+			'meta'  => array(
+				'class' => 'hover',
+			),
+		);
+
+		$admin_bar = Mockery::mock( 'WP_Admin_Bar' );
+		$admin_bar->shouldReceive( 'add_node' )
+			->once()
+			->with( $expected );
+
+		M::wpFunction( 'is_admin', array(
+			'times'  => 1,
+			'return' => false,
+		) );
+
+		M::wpFunction( 'googleadconsole_toggle_console_url', array(
+			'return' => 'URL',
+		) );
+
+		M::wpFunction( 'get_query_var', array(
+			'times'  => 1,
+			'return' => true,
+		) );
+
+		M::wpPassthruFunction( 'esc_html__' );
+		M::wpPassthruFunction( 'esc_url' );
+
+		googleadconsole_add_node( $admin_bar );
 	}
 
 	public function test_googleadconsole_register_query_var() {

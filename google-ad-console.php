@@ -30,6 +30,13 @@ function googleadconsole_add_node( $wp_admin_bar ) {
 		'href'  => esc_url( $url ),
 	);
 
+	// Active state for the node
+	if ( get_query_var( 'google_force_console', false ) ) {
+		$args['meta'] = array(
+			'class' => 'hover',
+		);
+	}
+
 	/**
 	 * Filter the arguments used to construct the "Google Ads Console" admin bar node.
 	 *
