@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Google Ad Console
- * Plugin URI: https://stevegrunwell.com/google-ad-console
+ * Plugin URI: https://stevegrunwell.com/blog/google-ad-console
  * Description: Toggle the Google Ad Console widget within the WordPress admin bar.
  * Version: 0.1
  * Author: Steve Grunwell
