@@ -145,4 +145,17 @@ class AdConsoleTest extends TestCase {
 		);
 	}
 
+	public function test_googleadconsole_load_plugin_textdomain() {
+		M::wpFunction( 'load_plugin_textdomain', array(
+			'times'  => 1,
+			'args'   => array( 'google-ad-console', false, '*' ),
+		) );
+
+		M::wpPassthruFunction( 'plugin_basename', array(
+			'times'  => 1,
+		) );
+
+		googleadconsole_load_plugin_textdomain();
+	}
+
 }
